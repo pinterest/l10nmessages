@@ -1,4 +1,4 @@
-name: Maven Build and Test on Java 1.8
+name: build
 
 on:
   push:
