@@ -20,6 +20,7 @@ import com.google.common.collect.ImmutableMap;
 import java.util.Enumeration;
 import java.util.ListResourceBundle;
 import java.util.Locale;
+import java.util.Map;
 import java.util.MissingResourceException;
 import java.util.Optional;
 import java.util.ResourceBundle;
@@ -166,6 +167,24 @@ class L10nMessagesTest {
         .isEqualTo("1 2 3 4 b5");
     assertThat(m.format(format_multi_args, "1", "1", "2", "2", "3", "3", "4", "4", "5", "5"))
         .isEqualTo("1 2 3 4 5");
+  }
+
+  @Test
+  public void formatFormatContext() {
+    L10nMessages<com.pinterest.l10nmessages.Messages> m =
+        L10nMessages.builder(Messages.class).build();
+
+    assertThat(m.format(new FormatContext<Messages>() {
+      @Override
+      public Messages getKey() {
+        return welcome_with_name;
+      }
+
+      @Override
+      public Map<String, Object> getArguments() {
+        return Maps.of("userName", "Mary");
+      }
+    })).isEqualTo("Welcome Mary!");
   }
 
   @Test
