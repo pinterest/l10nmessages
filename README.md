@@ -1,6 +1,6 @@
 # L10nMessages
 
-[![Build](https://github.com/pinterest/l10nmessages/actions/workflows/maven.yml/badge.svg)](https://github.com/pinterest/l10nmessages/actions/workflows/maven.yml)
+[![Build](https://github.com/pinterest/l10nmessages/actions/workflows/build.yml/badge.svg)](https://github.com/pinterest/l10nmessages/actions/workflows/build.yml)
 [![License](http://img.shields.io/:license-Apache%202-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.txt)
 
 `L10nMessages` is a library that makes internationalization (i18n) and localization (l10n) of Java
