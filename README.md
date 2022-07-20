@@ -6,17 +6,18 @@
 `L10nMessages` is a library that makes internationalization (i18n) and localization (l10n) of Java
 applications easy and safe.
 
-It provides a [fluent API](fluent-api) to load and format messages that is built on top of Java
-standard libraries. In addition to simplifying the overall setup, it brings strong typing and
-compile time checks to the mix when used with the [annotation processor](annotation-processor).
+It provides a [fluent API](https://pinterest.github.io/l10nmessages/docs/fluent-api) to load and 
+format messages that is built on top of Java standard libraries. In addition to simplifying the 
+overall setup, it brings strong typing and compile time checks to the mix when used with the 
+[annotation processor](https://pinterest.github.io/l10nmessages/docs/annotation-processor).
 
 ## Full Documentation
 
-The full documentation is [here](https://pinterest.github.io/l10nmessages).
+The full documentation is [here](https://pinterest.github.io/l10nmessages/).
 
 ## Installation
 
-Bazel, Gradle and Maven see [here]()
+Bazel, Gradle and Maven installation see [here](https://pinterest.github.io/l10nmessages/docs/installation)
 
 ## Getting Started
 
@@ -84,7 +85,7 @@ public class Application {
 }
 ```
 
-For extra typing, consider [argument names typing](fluent-api#argument-names-typing).
+For extra typing, consider [argument names typing](https://pinterest.github.io/l10nmessages/docs/fluent-api#argument-names-typing).
 
 ### Localization
 
