@@ -17,9 +17,13 @@ The full documentation is [here](https://pinterest.github.io/l10nmessages/).
 
 ## Installation
 
-Bazel, Gradle and Maven installation see [here](https://pinterest.github.io/l10nmessages/docs/installation)
+Bazel, Gradle and Maven installation,
+see [here](https://pinterest.github.io/l10nmessages/docs/installation)
 
 ## Getting Started
+
+Also available in the
+documentation [here](https://pinterest.github.io/l10nmessages/docs/getting-started/)
 
 ### Create a resource bundle
 

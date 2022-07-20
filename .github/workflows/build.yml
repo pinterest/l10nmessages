@@ -15,6 +15,9 @@ jobs:
     strategy:
       matrix:
         version: [8, 11]
+        include:
+          - version: 11
+            bazel: yes
     runs-on: ubuntu-latest
 
     steps:
@@ -35,6 +38,10 @@ jobs:
       - name: Run Gradle ICU exammple
         run: ./gradlew build run --no-daemon
         working-directory: examples/gradle-icu
+      - if: ${{ matrix.bazel }}
+        name: Run Bazel exammple
+        run: bazel build //:l10nbazel; bazel-bin/l10nbazel
+        working-directory: examples/bazel-local
 
 
 
