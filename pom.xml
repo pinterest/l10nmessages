@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.pinterest.l10nmessages</groupId>
+  <artifactId>l10nmessages-parent</artifactId>
+  <version>0.0.9-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <modules>
+    <module>test-jar-properties</module>
+    <module>l10nmessages</module>
+    <module>l10nmessages-proc</module>
+    <module>l10nmessages-mvn-plugin</module>
+    <module>examples</module>
+  </modules>
+
+  <properties>
+    <guava.version>29.0-jre</guava.version>
+    <icu4j.version>70.1</icu4j.version>
+    <java.version>1.8</java.version>
+    <junit-jupiter-engine.version>5.6.3</junit-jupiter-engine.version>
+    <assertj-core-version>3.22.0</assertj-core-version>
+    <maven.compiler.version>3.8.1</maven.compiler.version>
+    <maven.deploy.version>2.8.2</maven.deploy.version>
+    <maven.release.version>2.5.3</maven.release.version>
+    <mockito.version>3.11.2</mockito.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>3.2.0</version>
+        <executions>
+          <execution>
+            <id>attach-sources</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>jar-no-fork</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>${maven.compiler.version}</version>
+          <configuration>
+            <source>${java.version}</source>
+            <target>${java.version}</target>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>3.0.0-M4</version>
+        </plugin>
+
+        <plugin>
+          <groupId>com.diffplug.spotless</groupId>
+          <artifactId>spotless-maven-plugin</artifactId>
+          <version>2.21.0</version>
+          <configuration>
+            <java>
+              <toggleOffOn/>
+              <removeUnusedImports/>
+              <googleJavaFormat>
+                <version>1.7</version>
+              </googleJavaFormat>
+            </java>
+<!--            <pom>-->
+<!--              <sortPom>-->
+<!--                <sortProperties>true</sortProperties>-->
+<!--              </sortPom>-->
+<!--            </pom>-->
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+
+</project>
