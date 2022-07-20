@@ -19,7 +19,7 @@ that can lead to **false positive builds** or making the developer experience cu
 of them and see
 [details and workarounds](#be-aware-of-the-annotation-processor-limitations-with-maven) below.
 
-Consider using the [Maven plugin](#maven) as an alternative.
+Consider using the [Maven plugin](#maven-plugin) as an alternative.
 
 :::
 

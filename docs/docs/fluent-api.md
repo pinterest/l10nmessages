@@ -14,7 +14,7 @@ using [caching](caching) when performance is sensitive. The builder can also be 
 
 `L10nMessages` instance provides only one function `format()` with different overloads for ease of
 use. `format()` takes care of loading the localized message from the
-[resource bundle](resource-bundle) for the [given locale](#specify-the-locale). When required, it
+[resource bundle](resource-bundle) for the [given locale](#specify-a-locale). When required, it
 formats the message using the arguments passed to the function and the
 [base arguments](#base-arguments).
 

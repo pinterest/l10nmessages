@@ -39,5 +39,5 @@ This library has no transitive dependency and is meant to be lightweight.
 
 Any change to the `properties` file should re-trigger the generation for the `enums` for strong
 typing. `Bazel` and `Gradle` support this easily. `Maven` has
-[some limitations](maven#be-aware-of-the-annotation-processor-limitations-with-maven) to be aware
+[some limitations](maven.md#be-aware-of-the-annotation-processor-limitations-with-maven) to be aware
 of.

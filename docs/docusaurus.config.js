@@ -8,7 +8,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const config = {
   title: "L10nMessages",
   tagline: "Java Internationalization made easy!",
-  url: "http://localhost:3000",
+  url: "https://pinterest.github.io/l10nmessages/",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -23,7 +23,7 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
-          editUrl: "https://github.com/pinterest/l10nmessages/edit/docs",
+          editUrl: "https://github.com/pinterest/l10nmessages/edit/main/docs",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
