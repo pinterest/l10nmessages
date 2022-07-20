@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.pinterest.l10nmessages.example</groupId>
+    <artifactId>examples</artifactId>
+    <version>0.0.9-SNAPSHOT</version>
+  </parent>
+
+  <groupId>com.pinterest.l10nmessages.example</groupId>
+  <artifactId>maven-plugin</artifactId>
+  <version>0.0.9-SNAPSHOT</version>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.pinterest.l10nmessages</groupId>
+      <artifactId>l10nmessages</artifactId>
+      <version>0.0.9-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>com.pinterest.l10nmessages.example</groupId>
+      <artifactId>maven-properties</artifactId>
+      <version>0.0.9-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>com.ibm.icu</groupId>
+      <artifactId>icu4j</artifactId>
+      <version>${icu4j.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>${guava.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <version>${junit-jupiter-engine.version}</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>com.pinterest.l10nmessages</groupId>
+        <artifactId>l10nmessages-mvn-plugin</artifactId>
+        <version>0.0.9-SNAPSHOT</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <l10nPropertiesList>
+            <l10nProperties>
+              <baseName>com.pinterest.l10nmessages.example.Messages</baseName>
+              <enumType>WITH_ARGUMENT_BUILDERS</enumType>
+            </l10nProperties>
+            <l10nProperties>
+              <baseName>com.pinterest.l10nmessages.example.jar.Messages</baseName>
+            </l10nProperties>
+          </l10nPropertiesList>
+        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>com.ibm.icu</groupId>
+            <artifactId>icu4j</artifactId>
+            <version>${icu4j.version}</version>
+          </dependency>
+          <dependency>
+            <groupId>com.pinterest.l10nmessages.example</groupId>
+            <artifactId>maven-properties</artifactId>
+            <version>0.0.9-SNAPSHOT</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+    </plugins>
+  </build>
+</project>

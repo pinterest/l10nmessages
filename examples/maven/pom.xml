@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.pinterest.l10nmessages.example</groupId>
+    <artifactId>examples</artifactId>
+    <version>0.0.9-SNAPSHOT</version>
+  </parent>
+
+  <groupId>com.pinterest.l10nmessages.example</groupId>
+  <artifactId>maven</artifactId>
+  <version>0.0.9-SNAPSHOT</version>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.pinterest.l10nmessages</groupId>
+      <artifactId>l10nmessages-proc</artifactId>
+      <version>0.0.9-SNAPSHOT</version>
+    </dependency>
+
+    <!-- for tests - not needed by l10nmessages-->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <version>${junit-jupiter-engine.version}</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+</project>
