@@ -21,11 +21,6 @@
       <version>0.0.9-SNAPSHOT</version>
     </dependency>
     <dependency>
-      <groupId>com.pinterest.l10nmessages.example</groupId>
-      <artifactId>maven-properties</artifactId>
-      <version>0.0.9-SNAPSHOT</version>
-    </dependency>
-    <dependency>
       <groupId>com.ibm.icu</groupId>
       <artifactId>icu4j</artifactId>
       <version>${icu4j.version}</version>
@@ -62,9 +57,6 @@
               <baseName>com.pinterest.l10nmessages.example.Messages</baseName>
               <enumType>WITH_ARGUMENT_BUILDERS</enumType>
             </l10nProperties>
-            <l10nProperties>
-              <baseName>com.pinterest.l10nmessages.example.jar.Messages</baseName>
-            </l10nProperties>
           </l10nPropertiesList>
         </configuration>
         <dependencies>
@@ -72,11 +64,6 @@
             <groupId>com.ibm.icu</groupId>
             <artifactId>icu4j</artifactId>
             <version>${icu4j.version}</version>
-          </dependency>
-          <dependency>
-            <groupId>com.pinterest.l10nmessages.example</groupId>
-            <artifactId>maven-properties</artifactId>
-            <version>0.0.9-SNAPSHOT</version>
           </dependency>
         </dependencies>
       </plugin>

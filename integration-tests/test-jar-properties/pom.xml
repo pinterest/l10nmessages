@@ -5,13 +5,12 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>com.pinterest.l10nmessages.example</groupId>
-    <artifactId>examples</artifactId>
+    <groupId>com.pinterest.l10nmessages.tests</groupId>
+    <artifactId>integration-tests</artifactId>
     <version>0.0.9-SNAPSHOT</version>
   </parent>
 
-  <groupId>com.pinterest.l10nmessages.example</groupId>
-  <artifactId>maven-properties</artifactId>
+  <artifactId>test-jar-properties</artifactId>
   <version>0.0.9-SNAPSHOT</version>
 
 </project>

@@ -69,12 +69,6 @@
       <version>0.19</version>
       <scope>test</scope>
     </dependency>
-    <dependency>
-      <groupId>com.pinterest.l10nmessages</groupId>
-      <artifactId>test-jar-properties</artifactId>
-      <version>0.0.9-SNAPSHOT</version>
-      <scope>test</scope>
-    </dependency>
   </dependencies>
 
   <build>

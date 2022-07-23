@@ -16,7 +16,6 @@
   <packaging>pom</packaging>
 
   <modules>
-    <module>maven-properties</module>
     <module>maven</module>
     <module>maven-explicit</module>
     <module>maven-icu</module>

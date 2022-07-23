@@ -4,9 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertIterableEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import com.pinterest.l10nmessages.L10nMessages;
 import com.pinterest.l10nmessages.OnFormatErrorException;
-import com.pinterest.l10nmessages.example.jar.Messages;
 import java.time.ZoneOffset;
 import java.util.Arrays;
 import java.util.Locale;
@@ -267,11 +265,5 @@ class ApplicationTest {
             "Son nombre préferé est 1",
             "Ses nombres préferés sont 3 et 7"),
         Application.icu4JComplex());
-  }
-
-  @Test
-  void propertiesFromJar() {
-    L10nMessages<Messages> m = L10nMessages.builder(Messages.class).build();
-    assertEquals("Welcome Mary!", Application.propertiesFromJar());
   }
 }

@@ -204,32 +204,6 @@ class ProcessorFilerTest {
   }
 
   @Test
-  void getResourcePackageJar() throws IOException {
-    // if run/debug in intellij, this won't read from the jar, so not testing the right path
-    // Run: mvn clean test -Dtest=SearchFilerTest#getResourcePackageJar instead
-    URL url =
-        ProcessorFilerTest.class.getResource(
-            "/com/pinterest/l10nmessages/testjar/Strings.properties");
-    JavaFileObject javaFileObject = JavaFileObjects.forResource(url);
-
-    Filer mockFiler = mock(Filer.class);
-    when(mockFiler.getResource(
-            StandardLocation.ANNOTATION_PROCESSOR_PATH,
-            "com.pinterest.l10nmessages.testjar",
-            "Strings.properties"))
-        .thenReturn(javaFileObject);
-
-    ProcessorFiler ProcessorFiler = new ProcessorFiler(mockFiler, null);
-
-    URI actual =
-        ProcessorFiler.getInputResourcePackage(
-            NameParts.fromPropertiesPath("/com/pinterest/l10nmessages/testjar/Strings.properties"));
-
-    assertThat(javaFileObject.toUri().toString().replaceAll("Strings.properties$", ""))
-        .isEqualTo(actual.toString());
-  }
-
-  @Test
   void findInPackage() throws URISyntaxException {
     URL url =
         ProcessorFilerTest.class.getResource(
@@ -271,31 +245,6 @@ class ProcessorFilerTest {
   }
 
   @Test
-  void findInPackageJar() throws URISyntaxException, MalformedURLException {
-    URL url = getJarUrl("/com/pinterest/l10nmessages/testjar/");
-    List<String> actual =
-        ProcessorFiler.findInPackage(url.toURI(), alwaysTrue()).stream()
-            .sorted()
-            .collect(Collectors.toList());
-    assertEquals(
-        Arrays.asList("Strings.properties", "Strings_fr_FR.properties", "Strings_ja.properties"),
-        actual);
-  }
-
-  @Test
-  void findInPackageJarFileSystemAlreadyOpen() throws URISyntaxException, IOException {
-    URL url = getJarUrl("/com/pinterest/l10nmessages/testjar/");
-    FileSystems.newFileSystem(url.toURI(), Collections.emptyMap());
-    List<String> actual =
-        ProcessorFiler.findInPackage(url.toURI(), alwaysTrue()).stream()
-            .sorted()
-            .collect(Collectors.toList());
-    assertEquals(
-        Arrays.asList("Strings.properties", "Strings_fr_FR.properties", "Strings_ja.properties"),
-        actual);
-  }
-
-  @Test
   void findInPackageMissing() {
     URI uri = URI.create("file:/SearchFilterTest/misssing");
     NoSuchPackageException noSuchPackageException =
@@ -325,21 +274,5 @@ class ProcessorFilerTest {
 
   private static Predicate<Path> alwaysTrue() {
     return path -> true;
-  }
-
-  private static URL getJarUrl(String resourceName) throws MalformedURLException {
-    URL url = ProcessorFilerTest.class.getResource(resourceName);
-    if (!url.toString().contains("jar:file")) {
-      // Previous call may not give the jar url, eg. when debugging in Intellij, so
-      // re-build the url explicitly. Update the SNAPSHOT version as needed as it may get outdated
-      url =
-          new URL(
-              "jar:file:"
-                  + Paths.get(
-                          "../test-jar-properties/target/test-jar-properties-0.0.9-SNAPSHOT.jar")
-                      .toAbsolutePath()
-                  + "!/com/pinterest/l10nmessages/testjar/");
-    }
-    return url;
   }
 }

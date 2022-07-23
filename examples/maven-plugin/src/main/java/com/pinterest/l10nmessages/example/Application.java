@@ -433,10 +433,4 @@ public class Application {
             })
         .collect(Collectors.toList());
   }
-
-  static String propertiesFromJar() {
-    L10nMessages<com.pinterest.l10nmessages.example.jar.Messages> m =
-        L10nMessages.builder(com.pinterest.l10nmessages.example.jar.Messages.class).build();
-    return m.format(com.pinterest.l10nmessages.example.jar.Messages.welcome_user, "0", "Mary");
-  }
 }

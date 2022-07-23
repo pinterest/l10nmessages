@@ -8,10 +8,10 @@
   <packaging>pom</packaging>
 
   <modules>
-    <module>test-jar-properties</module>
     <module>l10nmessages</module>
     <module>l10nmessages-proc</module>
     <module>l10nmessages-mvn-plugin</module>
+    <module>integration-tests</module>
     <module>examples</module>
   </modules>
 
