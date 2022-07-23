@@ -174,17 +174,20 @@ class L10nMessagesTest {
     L10nMessages<com.pinterest.l10nmessages.Messages> m =
         L10nMessages.builder(Messages.class).build();
 
-    assertThat(m.format(new FormatContext<Messages>() {
-      @Override
-      public Messages getKey() {
-        return welcome_with_name;
-      }
+    assertThat(
+            m.format(
+                new FormatContext<Messages>() {
+                  @Override
+                  public Messages getKey() {
+                    return welcome_with_name;
+                  }
 
-      @Override
-      public Map<String, Object> getArguments() {
-        return Maps.of("userName", "Mary");
-      }
-    })).isEqualTo("Welcome Mary!");
+                  @Override
+                  public Map<String, Object> getArguments() {
+                    return Maps.of("userName", "Mary");
+                  }
+                }))
+        .isEqualTo("Welcome Mary!");
   }
 
   @Test

@@ -4,8 +4,8 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * Adapter for {@link java.text.MessageFormat} and {@link com.ibm.icu.text.MessageFormat} to expose
- * formatting capabilities and expose arguments names of the message format.
+ * Adapter for {@link java.text.MessageFormat} and {@code com.ibm.icu.text.MessageFormat} to
+ * expose formatting capabilities and expose arguments names of the message format.
  */
 public interface MessageFormatAdapter {
 

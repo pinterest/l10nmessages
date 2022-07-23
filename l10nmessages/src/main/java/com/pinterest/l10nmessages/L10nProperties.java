@@ -25,8 +25,6 @@ import java.lang.annotation.Target;
  *   <li>checks the validity for the message formats. Files to be checked can be configured with
  *       {@link #messageFormatValidationTargets()})
  * </ul>
- *
- * <p>{@see https://docs.oracle.com/javase/tutorial/i18n/resbundle/propfile.html}
  */
 @Repeatable(L10nPropertiesList.class)
 @Target({ElementType.TYPE})

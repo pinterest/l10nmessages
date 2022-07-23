@@ -11,11 +11,14 @@
     <version>0.0.9-SNAPSHOT</version>
   </parent>
 
-  <groupId>com.pinterest.l10nmessages</groupId>
   <artifactId>l10nmessages-mvn-plugin</artifactId>
   <version>0.0.9-SNAPSHOT</version>
   <name>l10nmessages-mvn-plugin</name>
   <packaging>maven-plugin</packaging>
+  <url>https://pinterest.github.io/l10nmessages</url>
+  <description>The Maven plugin for L10nMessages, a library that makes internationalization (i18n)
+    and localization (l10n) of Java applications easy and safe.
+  </description>
 
   <properties>
     <maven.version>3.8.4</maven.version>
