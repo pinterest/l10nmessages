@@ -1,19 +1,36 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.pinterest.l10nmessages</groupId>
   <artifactId>l10nmessages-parent</artifactId>
   <version>0.0.9-SNAPSHOT</version>
   <packaging>pom</packaging>
+  <name>l10nmessages-parent</name>
+  <url>https://pinterest.github.io/l10nmessages</url>
+  <description>The parent module for L10nMessages, a library that makes internationalization (i18n)
+    and localization (l10n) of Java applications easy and safe.
+  </description>
+  <licenses>
+    <license>
+      <name>Apache License, Version 2.0</name>
+      <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
 
-  <modules>
-    <module>l10nmessages</module>
-    <module>l10nmessages-proc</module>
-    <module>l10nmessages-mvn-plugin</module>
-    <module>integration-tests</module>
-    <module>examples</module>
-  </modules>
+  <developers>
+    <developer>
+      <id>jean</id>
+      <name>Jean Aurambault</name>
+      <email>jeanaurambault@pinterest.com</email>
+      <roles>
+        <role>developer</role>
+      </roles>
+    </developer>
+  </developers>
 
   <properties>
     <guava.version>29.0-jre</guava.version>
@@ -28,23 +45,94 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
+  <scm>
+    <connection>scm:git:git@github.com:pinterest/l10nmessages.git</connection>
+    <developerConnection>scm:git:git@github.com:pinterest/l10nmessages.git</developerConnection>
+    <url>https://github.com/pinterest/l10nmessages</url>
+    <tag>HEAD</tag>
+  </scm>
+
+  <profiles>
+    <profile>
+      <id>default-modules</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <modules>
+        <module>l10nmessages</module>
+        <module>l10nmessages-proc</module>
+        <module>l10nmessages-mvn-plugin</module>
+        <module>integration-tests</module>
+        <module>examples</module>
+      </modules>
+    </profile>
+    <profile>
+      <id>release</id>
+      <modules>
+        <module>l10nmessages</module>
+        <module>l10nmessages-proc</module>
+        <module>l10nmessages-mvn-plugin</module>
+      </modules>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-source-plugin</artifactId>
+            <version>3.2.0</version>
+            <executions>
+              <execution>
+                <id>attach-sources</id>
+                <phase>verify</phase>
+                <goals>
+                  <goal>jar-no-fork</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <version>3.4.0</version>
+            <executions>
+              <execution>
+                <id>attach-javadocs</id>
+                <phase>verify</phase>
+                <goals>
+                  <goal>jar</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-gpg-plugin</artifactId>
+            <version>1.6</version>
+            <executions>
+              <execution>
+                <id>sign-artifacts</id>
+                <phase>verify</phase>
+                <goals>
+                  <goal>sign</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.sonatype.plugins</groupId>
+            <artifactId>nexus-staging-maven-plugin</artifactId>
+            <version>1.6.13</version>
+            <extensions>true</extensions>
+            <configuration>
+              <serverId>ossrh</serverId>
+              <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+              <autoReleaseAfterClose>false</autoReleaseAfterClose>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
   <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-source-plugin</artifactId>
-        <version>3.2.0</version>
-        <executions>
-          <execution>
-            <id>attach-sources</id>
-            <phase>verify</phase>
-            <goals>
-              <goal>jar-no-fork</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
     <pluginManagement>
       <plugins>
         <plugin>
@@ -68,21 +156,27 @@
           <version>2.21.0</version>
           <configuration>
             <java>
-              <toggleOffOn/>
-              <removeUnusedImports/>
+              <toggleOffOn />
+              <removeUnusedImports />
               <googleJavaFormat>
                 <version>1.7</version>
               </googleJavaFormat>
             </java>
-<!--            <pom>-->
-<!--              <sortPom>-->
-<!--                <sortProperties>true</sortProperties>-->
-<!--              </sortPom>-->
-<!--            </pom>-->
           </configuration>
         </plugin>
       </plugins>
     </pluginManagement>
   </build>
+
+  <distributionManagement>
+    <snapshotRepository>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </snapshotRepository>
+    <repository>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+    </repository>
+  </distributionManagement>
 
 </project>
