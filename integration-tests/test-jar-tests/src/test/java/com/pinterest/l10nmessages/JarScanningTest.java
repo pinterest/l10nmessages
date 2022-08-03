@@ -81,11 +81,13 @@ public class JarScanningTest {
     if (!url.toString().contains("jar:file")) {
       // Previous call may not give the jar url, eg. when debugging in Intellij, so
       // re-build the url explicitly. Update the SNAPSHOT version as needed as it may get outdated
+      // It seems that CI/github action also requires that
       url =
           new URL(
               "jar:file:"
                   + Paths.get(
-                  "../test-jar-properties/target/test-jar-properties-0.0.9-SNAPSHOT.jar")
+                  "../test-jar-properties/target/test-jar-properties-" + System.getProperties()
+                      .getProperty("project.version") + ".jar")
                   .toAbsolutePath()
                   + "!/com/pinterest/l10nmessages/tests/m1");
     }
