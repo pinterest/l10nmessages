@@ -6,7 +6,7 @@ cd examples/bazel-local/
 bazel clean; bazel build //:l10nbazel; bazel-bin/l10nbazel
 cd -;
 
-cd examples/bazel-icu/
+cd examples/bazel-icu-local/
 bazel clean; bazel build //:l10nbazel; bazel-bin/l10nbazel
 cd -;
 

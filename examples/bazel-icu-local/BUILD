@@ -8,8 +8,8 @@ java_plugin(
     processor_class = "com.pinterest.l10nmessages.L10nPropertiesProcessor",
     deps = [
         "@maven//:com_ibm_icu_icu4j",
-        "@maven//:com_pinterest_l10nmessages_l10nmessages_proc",
-        "@maven//:com_pinterest_l10nmessages_l10nmessages"
+        "@l10nmessages_local//:l10nmessages-proc",
+        "@l10nmessages_local//:l10nmessages"
     ],
     resources = ["l10nresources"]
 )
@@ -21,7 +21,7 @@ java_binary(
     plugins = [ "l10nmessages_proc"],
     deps = [
            "@maven//:com_ibm_icu_icu4j",
-           "@maven//:com_pinterest_l10nmessages_l10nmessages"
+           "@l10nmessages_local//:l10nmessages"
     ],
     main_class = "com.pinterest.l10nmessages.example.Application",
 )

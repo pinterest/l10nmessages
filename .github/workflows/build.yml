@@ -42,6 +42,10 @@ jobs:
         name: Run Bazel exammple
         run: bazel build //:l10nbazel; bazel-bin/l10nbazel
         working-directory: examples/bazel-local
+      - if: ${{ matrix.bazel }}
+        name: Run Bazel ICU exammple
+        run: bazel build //:l10nbazel; bazel-bin/l10nbazel
+        working-directory: examples/bazel-icu-local
 
 
 

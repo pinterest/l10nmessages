@@ -19,7 +19,7 @@ java_binary(
     resources = ["l10nresources"],
     plugins = [ "l10nmessages_proc"],
     deps = [
-           "@l10nmessages_local//:l10nmessages",
+           "@maven//:com_pinterest_l10nmessages_l10nmessages",
     ],
     main_class = "com.pinterest.l10nmessages.example.Application",
 )
