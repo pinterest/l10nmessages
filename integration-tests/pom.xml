@@ -7,12 +7,12 @@
   <parent>
     <groupId>com.pinterest.l10nmessages</groupId>
     <artifactId>l10nmessages-parent</artifactId>
-    <version>0.0.9-SNAPSHOT</version>
+    <version>1.0.0</version>
   </parent>
 
   <groupId>com.pinterest.l10nmessages.tests</groupId>
   <artifactId>integration-tests</artifactId>
-  <version>0.0.9-SNAPSHOT</version>
+  <version>1.0.0</version>
   <packaging>pom</packaging>
 
   <modules>
