@@ -6,7 +6,7 @@
 
   <groupId>com.pinterest.l10nmessages</groupId>
   <artifactId>l10nmessages-parent</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>l10nmessages-parent</name>
   <url>https://pinterest.github.io/l10nmessages</url>
@@ -49,7 +49,7 @@
     <connection>scm:git:git@github.com:pinterest/l10nmessages.git</connection>
     <developerConnection>scm:git:git@github.com:pinterest/l10nmessages.git</developerConnection>
     <url>https://github.com/pinterest/l10nmessages</url>
-    <tag>1.0.0</tag>
+    <tag>HEAD</tag>
   </scm>
 
   <profiles>

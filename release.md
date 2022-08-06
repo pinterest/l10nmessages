@@ -58,7 +58,7 @@ The next snapshot version is the release version with PATCH incremented by one a
 with "SNAPSHOT"
 
 ```shell
-export NEW_VERSION=0.0.1-SNAPSHOT
+export NEW_VERSION=1.0.1-SNAPSHOT
 mvn versions:set -DnewVersion=${NEW_VERSION} -DgenerateBackupPoms=false
 mvn versions:set-scm-tag -DnewTag=HEAD -DgenerateBackupPoms=false
 ./update-non-maven-versions.sh ${NEW_VERSION}

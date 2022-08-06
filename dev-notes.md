@@ -25,9 +25,9 @@ find the properties files.
 
 ```shell
 $ javac -d outputproc -proc:only \
-  -processorpath "../../l10nmessages-proc/target/l10nmessages-proc-1.0.0.jar:../../l10nmessages/target/l10nmessages-1.0.0.jar" \
+  -processorpath "../../l10nmessages-proc/target/l10nmessages-proc-1.0.1-SNAPSHOT.jar:../../l10nmessages/target/l10nmessages-1.0.1-SNAPSHOT.jar" \
   -processor "com.pinterest.l10nmessages.L10nPropertiesProcessor" \
-  -classpath "../../l10nmessages/target/l10nmessages-1.0.0.jar" \
+  -classpath "../../l10nmessages/target/l10nmessages-1.0.1-SNAPSHOT.jar" \
   -Adebug \
   -Al10nPropertiesProcessor.fallbackInputLocation="src/main/resources" \
   src/main/java/com/pinterest/l10nmessages/example/Application.java
@@ -41,7 +41,7 @@ To show debug messages in Maven, need to show warnings
   <dependency>
     <groupId>com.pinterest.l10nmessages</groupId>
     <artifactId>l10nmessages-proc</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
   </dependency>
 </annotationProcessorPaths>
 <annotationProcessors>com.pinterest.l10nmessages.L10nPropertiesProcessor
@@ -62,9 +62,9 @@ as param to maven which is not great.
 For testing
 ```
 javac -d outputproc -proc:only \
--processorpath "src/main/resources:/Users/jeanaurambault/.m2/repository/com/pinterest/l10nmessages/l10nmessages-proc/1.0.0/l10nmessages-proc-1.0.0.jar:/Users/jeanaurambault/.m2/repository/com/pinterest/l10nmessages/l10nmessages/1.0.0/l10nmessages-1.0.0.jar" \
+-processorpath "src/main/resources:/Users/jeanaurambault/.m2/repository/com/pinterest/l10nmessages/l10nmessages-proc/1.0.1-SNAPSHOT/l10nmessages-proc-1.0.1-SNAPSHOT.jar:/Users/jeanaurambault/.m2/repository/com/pinterest/l10nmessages/l10nmessages/1.0.1-SNAPSHOT/l10nmessages-1.0.1-SNAPSHOT.jar" \
 -processor "com.pinterest.l10nmessages.L10nPropertiesProcessor" \
--classpath "/Users/jeanaurambault/.m2/repository/com/pinterest/l10nmessages/l10nmessages/1.0.0/l10nmessages-1.0.0.jar" \
+-classpath "/Users/jeanaurambault/.m2/repository/com/pinterest/l10nmessages/l10nmessages/1.0.1-SNAPSHOT/l10nmessages-1.0.1-SNAPSHOT.jar" \
 src/main/java/com/example/App.java
 ```
 
