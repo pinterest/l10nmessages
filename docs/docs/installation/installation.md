@@ -7,7 +7,9 @@ description: Java internationalization made easy and safe!
 
 Java 8+ supported
 
-Maven group id is `com.pinterest.l10nmessages` and artifact id `l10nmessages`.
+Maven group id is `com.pinterest.l10nmessages` and artifact id `l10nmessages`. 
+
+The latest version is `1.0.0`.
 
 :::
 

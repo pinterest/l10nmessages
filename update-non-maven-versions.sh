@@ -32,13 +32,15 @@ sed -E -i '' -e  "s/l10nmessages-proc-${CURRENT_VERSION}/l10nmessages-proc-${NEW
 
 if [[ ${NEW_VERSION} != *SNAPSHOT ]]
 then
+  # Bazel examples
   echo "Updating to release"
   sed -E -i '' -e  "s/l10nmessages:${CURRENT_VERSION}/l10nmessages:${NEW_VERSION}/g" examples/{bazel,bazel-icu}/WORKSPACE;
   sed -E -i '' -e  "s/l10nmessages_proc:${CURRENT_VERSION}/l10nmessages_proc:${NEW_VERSION}/g" examples/{bazel,bazel-icu}/WORKSPACE;
 
-  # docs
+  # Docs
   sed -E -i '' -e  "s/l10nmessages:${CURRENT_VERSION}/l10nmessages:${NEW_VERSION}/g" docs/docs/installation/{bazel,gradle}.md;
   sed -E -i '' -e  "s/l10nmessages-proc:${CURRENT_VERSION}/l10nmessages-proc:${NEW_VERSION}/g" docs/docs/installation/{bazel,gradle}.md;
+  sed -E -i '' -e  "s/The latest version is \`${CURRENT_VERSION}/The latest version is \`${NEW_VERSION}/g" docs/docs/installation/installation.md;
 
   ## Warning!! this works because only l10nmessages dependencies have x.y.z version (adding any
   sed -E -i '' -e  "s/version>${CURRENT_VERSION}/version>${NEW_VERSION}/g" {docs/docs/installation/maven.md,l10nmessages-mvn-plugin/usage.md};
