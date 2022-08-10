@@ -7,6 +7,11 @@
 import React from "react";
 import clsx from "clsx";
 import styles from "./HomepageFeatures.module.css";
+import MavenDependenciesImageUrl from '@site/static/img/maven_dependencies.png';
+import EasyToUseImageUrl from '@site/static/img/easy_to_use.png';
+import BuildFailureImageUrl from '@site/static/img/build_failure.png';
+
+
 
 type FeatureItem = {
   title: string;
@@ -17,19 +22,19 @@ type FeatureItem = {
 const FeatureList: FeatureItem[] = [
   {
     title: "Lightweight",
-    image: "/img/maven_dependencies.png",
+    image: MavenDependenciesImageUrl,
     description: (
       <>Rely on Java standard APIs, no extra dependency required. Optional ICU4J integration.</>
     ),
   },
   {
     title: "Easy to Use",
-    image: "/img/easy_to_use.png",
+    image: EasyToUseImageUrl,
     description: <>Provides a fluent API to load and format localized messages</>,
   },
   {
     title: "Safer",
-    image: "/img/build_failure.png",
+    image: BuildFailureImageUrl,
     description: (
       <>
         Catch issues at build time! Minimize runtime errors with strong typing and message format
