@@ -19,8 +19,10 @@ The full documentation is [here](https://pinterest.github.io/l10nmessages/).
 
 ## Installation
 
-For Bazel, Gradle and Maven installation,
-see [here](https://pinterest.github.io/l10nmessages/docs/installation).
+See [general instructions](https://pinterest.github.io/l10nmessages/docs/installation) and 
+guides for [Bazel](https://pinterest.github.io/l10nmessages/docs/installation/bazel),
+[Gradle](https://pinterest.github.io/l10nmessages/docs/installation/gradle) and
+[Maven](https://pinterest.github.io/l10nmessages/docs/installation/maven).
 
 ## Getting Started
 
