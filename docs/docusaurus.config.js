@@ -69,6 +69,9 @@ const config = {
         darkTheme: darkCodeTheme,
         additionalLanguages: ["java", "properties"],
       },
+      themeConfig: {
+        metadata: [{name: 'keywords', content: 'localization, internationalization, java, l10n, i18n, icu4j'}],
+      }
     }),
 };
 
