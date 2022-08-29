@@ -13,7 +13,7 @@
   <artifactId>l10nmessages-proc</artifactId>
   <version>1.0.1-SNAPSHOT</version>
   <name>l10nmessages-proc</name>
-  <url>https://pinterest.github.io/l10nmessages</url>
+  <url>https://l10nmessages.io</url>
   <description>The annotation processor for L10nMessages, a library that makes internationalization
     (i18n) and localization (l10n) of Java applications easy and safe.
   </description>

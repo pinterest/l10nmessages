@@ -2,32 +2,32 @@
 
 [![Build](https://github.com/pinterest/l10nmessages/actions/workflows/build.yml/badge.svg)](https://github.com/pinterest/l10nmessages/actions/workflows/build.yml)
 [![License](http://img.shields.io/:license-Apache%202-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.txt)
-[![Maven Central](https://img.shields.io/maven-central/v/com.pinterest.l10nmessages/l10nmessages)](https://pinterest.github.io/l10nmessages/docs/installation)
+[![Maven Central](https://img.shields.io/maven-central/v/com.pinterest.l10nmessages/l10nmessages)](https://l10nmessages.io/docs/installation)
 [![javadoc](https://javadoc.io/badge2/com.pinterest.l10nmessages/l10nmessages/javadoc.svg)](https://javadoc.io/doc/com.pinterest.l10nmessages/l10nmessages)
 
 `L10nMessages` is a library that makes internationalization (i18n) and localization (l10n) of Java
 applications easy and safe.
 
-It provides a [fluent API](https://pinterest.github.io/l10nmessages/docs/fluent-api) to load and 
+It provides a [fluent API](https://l10nmessages.io/docs/fluent-api) to load and 
 format messages that is built on top of Java standard libraries. In addition to simplifying the 
 overall setup, it brings strong typing and compile time checks to the mix when used with the 
-[annotation processor](https://pinterest.github.io/l10nmessages/docs/annotation-processor).
+[annotation processor](https://l10nmessages.io/docs/annotation-processor).
 
 ## Full Documentation
 
-The full documentation is [here](https://pinterest.github.io/l10nmessages/).
+The full documentation is [here](https://l10nmessages.io/).
 
 ## Installation
 
-See [general instructions](https://pinterest.github.io/l10nmessages/docs/installation) and 
-guides for [Bazel](https://pinterest.github.io/l10nmessages/docs/installation/bazel),
-[Gradle](https://pinterest.github.io/l10nmessages/docs/installation/gradle) and
-[Maven](https://pinterest.github.io/l10nmessages/docs/installation/maven).
+See [general instructions](https://l10nmessages.io/docs/installation) and 
+guides for [Bazel](https://l10nmessages.io/docs/installation/bazel),
+[Gradle](https://l10nmessages.io/docs/installation/gradle) and
+[Maven](https://l10nmessages.io/docs/installation/maven).
 
 ## Getting Started
 
 Also available in the
-[full documentation](https://pinterest.github.io/l10nmessages/docs/getting-started/) (with file
+[full documentation](https://l10nmessages.io/docs/getting-started/) (with file
 paths).
 
 ### Create a resource bundle
@@ -94,7 +94,7 @@ public class Application {
 }
 ```
 
-For extra typing, consider [argument names typing](https://pinterest.github.io/l10nmessages/docs/fluent-api#argument-names-typing).
+For extra typing, consider [argument names typing](https://l10nmessages.io/docs/fluent-api#argument-names-typing).
 
 ### Localization
 
