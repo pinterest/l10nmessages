@@ -8,8 +8,8 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const config = {
   title: "L10nMessages",
   tagline: "Java Internationalization made easy!",
-  url: "https://pinterest.github.io/",
-  baseUrl: "/l10nmessages/",
+  url: "https://l10nmessages.io/",
+  baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/icon.png",
