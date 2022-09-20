@@ -8,11 +8,11 @@
   <parent>
     <groupId>com.pinterest.l10nmessages</groupId>
     <artifactId>l10nmessages-parent</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.1</version>
   </parent>
 
   <artifactId>l10nmessages-mvn-plugin</artifactId>
-  <version>1.0.1-SNAPSHOT</version>
+  <version>1.0.1</version>
   <name>l10nmessages-mvn-plugin</name>
   <packaging>maven-plugin</packaging>
   <url>https://l10nmessages.io</url>
@@ -53,7 +53,7 @@
     <dependency>
       <groupId>com.pinterest.l10nmessages</groupId>
       <artifactId>l10nmessages-proc</artifactId>
-      <version>1.0.1-SNAPSHOT</version>
+      <version>1.0.1</version>
     </dependency>
 
     <dependency>

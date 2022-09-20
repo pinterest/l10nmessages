@@ -37,7 +37,7 @@ dependency.
   <dependency>
     <groupId>com.pinterest.l10nmessages</groupId>
     <artifactId>l10nmessages-proc</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
   </dependency>
 </dependencies>
 ```
@@ -60,7 +60,7 @@ Add a "compile" dependency on the runtime library and configure the annotation p
     <dependency>
       <groupId>com.pinterest.l10nmessages</groupId>
       <artifactId>l10nmessages</artifactId>
-      <version>1.0.0</version>
+      <version>1.0.1</version>
     </dependency>
   </dependencies>
   <build>
@@ -72,7 +72,7 @@ Add a "compile" dependency on the runtime library and configure the annotation p
             <dependency>
               <groupId>com.pinterest.l10nmessages</groupId>
               <artifactId>l10nmessages-proc</artifactId>
-              <version>1.0.0</version>
+              <version>1.0.1</version>
             </dependency>
           </annotationProcessorPaths>
           <annotationProcessors>com.pinterest.l10nmessages.L10nPropertiesProcessor
@@ -96,7 +96,7 @@ Same as "JDK only" and add the `icu4j` as "compile" dependency.
     <dependency>
       <groupId>com.pinterest.l10nmessages</groupId>
       <artifactId>l10nmessages</artifactId>
-      <version>1.0.0</version>
+      <version>1.0.1</version>
     </dependency>
     <dependency>
       <groupId>com.ibm.icu</groupId>
@@ -114,7 +114,7 @@ Same as "JDK only" and add the `icu4j` as "compile" dependency.
             <dependency>
               <groupId>com.pinterest.l10nmessages</groupId>
               <artifactId>l10nmessages-proc</artifactId>
-              <version>1.0.0</version>
+              <version>1.0.1</version>
             </dependency>
           </annotationProcessorPaths>
           <annotationProcessors>com.pinterest.l10nmessages.L10nPropertiesProcessor
@@ -209,7 +209,7 @@ The full configuration looks like:
     <dependency>
       <groupId>com.pinterest.l10nmessages</groupId>
       <artifactId>l10nmessages</artifactId>
-      <version>1.0.0</version>
+      <version>1.0.1</version>
     </dependency>
     <dependency>
       <groupId>com.ibm.icu</groupId>
@@ -222,7 +222,7 @@ The full configuration looks like:
       <plugin>
         <groupId>com.pinterest.l10nmessages</groupId>
         <artifactId>l10nmessages-mvn-plugin</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.1</version>
         <executions>
           <execution>
             <goals>
