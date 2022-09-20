@@ -18,6 +18,18 @@ yarn format
 Note: removed "sortPom" configuration because it doesn't respect line size. And runing prettier
 from yarn vs. Maven because of issue with nested XML, etc.
 
+### Update dependencies
+
+To update Maven dependencies:
+
+```
+mvn versions:update-properties
+mvn versions:use-next-versions
+```
+
+To update ICU4J, think to find/replace in all the code since bazel/gradle example won't be updated
+by the Maven command
+
 ## Annotation processors
 
 Passing annotation option with `javac`, just use the `-A`. This passes the extra path to scan to
