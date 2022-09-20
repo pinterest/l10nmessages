@@ -19,7 +19,7 @@
   </description>
 
   <properties>
-    <auto-service.version>1.0-rc6</auto-service.version>
+    <auto-service.version>1.0.1</auto-service.version>
   </properties>
   <dependencies>
     <dependency>
