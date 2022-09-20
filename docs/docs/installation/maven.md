@@ -101,7 +101,7 @@ Same as "JDK only" and add the `icu4j` as "compile" dependency.
     <dependency>
       <groupId>com.ibm.icu</groupId>
       <artifactId>icu4j</artifactId>
-      <version>70.1</version>
+      <version>71.1</version>
     </dependency>
   </dependencies>
   <build>
@@ -214,7 +214,7 @@ The full configuration looks like:
     <dependency>
       <groupId>com.ibm.icu</groupId>
       <artifactId>icu4j</artifactId>
-      <version>70.1</version>
+      <version>71.1</version>
     </dependency>
   </dependencies>
   <build>
@@ -241,7 +241,7 @@ The full configuration looks like:
           <dependency>
             <groupId>com.ibm.icu</groupId>
             <artifactId>icu4j</artifactId>
-            <version>70.1</version>
+            <version>71.1</version>
           </dependency>
         </dependencies>
       </plugin>

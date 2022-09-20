@@ -107,7 +107,7 @@ load("@rules_jvm_external//:defs.bzl", "maven_install")
 
 maven_install(
     artifacts = [
-        "com.ibm.icu:icu4j:70.1"
+        "com.ibm.icu:icu4j:71.1"
         "com.pinterest.l10nmessages:l10nmessages:1.0.0"
         "com.pinterest.l10nmessages:l10nmessages-proc:1.0.0"
     ],

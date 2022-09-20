@@ -10,9 +10,9 @@ repositories {
 dependencies {
     // l10nmessages
     implementation("com.pinterest.l10nmessages:l10nmessages:1.0.1-SNAPSHOT")
-    implementation("com.ibm.icu:icu4j:70.1")
+    implementation("com.ibm.icu:icu4j:71.1")
     annotationProcessor("com.pinterest.l10nmessages:l10nmessages-proc:1.0.1-SNAPSHOT")
-    annotationProcessor("com.ibm.icu:icu4j:70.1")
+    annotationProcessor("com.ibm.icu:icu4j:71.1")
     annotationProcessor(files("src/main/resources"))
 
     // for tests - not needed by l10nmessages

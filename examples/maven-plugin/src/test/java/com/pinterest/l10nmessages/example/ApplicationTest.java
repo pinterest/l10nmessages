@@ -177,7 +177,7 @@ class ApplicationTest {
   @Test
   void icu4jSkeleton() {
     assertEquals(
-        Arrays.asList("CA$1,000.12 - June 22, 8:12 PM", "1 000,12 $CA - 22 juin, 20:12"),
+        Arrays.asList("CA$1,000.12 - June 22 at 8:12 PM", "1 000,12 $CA - 22 juin à 20:12"),
         Application.icu4jSkeleton());
   }
 
