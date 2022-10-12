@@ -9,14 +9,14 @@ languages.
 This guide covers the most common usages and showcases some differences between languages when it
 comes to formatting numbers and dates as well as handling plurals and gender in messages.
 
-Check the [installation guides](installation) to add the dependency and the
+Check the [installation guides](installation/installation.md) to add the dependency and the
 [ICU documentation](https://unicode-org.github.io/icu/userguide/format_parse/messages/) for more
 information.
 
 ## Basic formatting
 
 `ICU4J` support both named and numbered arguments (see
-[differences with JDK](fluent-api#named-vs-numbered-arguments)).
+[differences with JDK](fluent-api.md#named-vs-numbered-arguments)).
 
 `L10nMessages` always references placeholders by their name as a "string". A numbered argument `{0}`
 is referenced by the key `"0"`.

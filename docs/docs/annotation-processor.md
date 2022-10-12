@@ -18,7 +18,7 @@ For each resource bundle, the pre-processor:
 
 Add the `@L10nProperties` annotation to any class to register a resource bundle with the annotation
 processor. To understand how the `baseName` is defined, check
-[Naming convention](resource-bundle#naming-convention).
+[Naming convention](resource-bundle.md#naming-convention).
 
 ```java
 
@@ -32,7 +32,7 @@ public class Application {
 :::info
 
 For Maven builds, the annotation processor can be replaced with a
-[Maven plugin](installation/maven#maven-plugin). The resource bundle registration will be done in
+[Maven plugin](installation/maven.md#maven-plugin). The resource bundle registration will be done in
 the `pom.xml` file instead of using the annotation.
 
 :::
@@ -74,9 +74,9 @@ A message is valid if it is possible to create a `MessageFormat` instance from i
 ### ICU4J, JDK or JDK with named arguments
 
 By default, the annotation processor
-([as the fluent API](fluent-api#icu4j-jdk-or-jdk-with-named-arguments)) will use `ICU4J` if it is
+([as the fluent API](fluent-api.md#icu4j-jdk-or-jdk-with-named-arguments)) will use `ICU4J` if it is
 available. If not, it will use the `JDK` extended with
-[named arguments](fluent-api#named-arguments-with-jdk-messageformat) support.
+[named arguments](fluent-api.md#named-arguments-with-jdk-messageformat) support.
 
 Use `messageFormatAdapterProviders` to set a specific version of `MessageFormat` to use.
 

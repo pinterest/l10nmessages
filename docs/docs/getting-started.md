@@ -2,8 +2,8 @@
 title: Getting Started
 ---
 
-See the [installation](installation) guide for your build system or start with
-[existing examples](examples).
+See the [installation](installation/installation.md) guide for your build system or start with
+[existing examples](examples.md).
 
 This guide goes through all the steps required to render a localized message in a Java application
 starting from scratch.
@@ -72,7 +72,7 @@ public class Application {
 }
 ```
 
-For extra typing, consider [argument names typing](fluent-api#argument-names-typing).
+For extra typing, consider [argument names typing](fluent-api.md#argument-names-typing).
 
 ## Localization
 
@@ -100,4 +100,4 @@ public class Application {
 }
 ```
 
-For advanced message formatting and localization, see the [ICU4J guide](icu4j).
+For advanced message formatting and localization, see the [ICU4J guide](icu4j.md).

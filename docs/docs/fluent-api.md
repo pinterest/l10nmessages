@@ -9,12 +9,12 @@ checks to the mix when used with the annotation processor.
 Use `L10nMessages.builder()` to create instances. Ideally, use the annotation processor to make the
 initialization [simpler using the generated enum](#with-the-annotation-processor). Customize
 ["failure handling"](#failure-handling) to add logging or to change default behaviors. Consider
-using [caching](caching) when performance is sensitive. The builder can also be fully
+using [caching](caching.md) when performance is sensitive. The builder can also be fully
 [configured manually](#without-the-annotation-processor) if the annotation processor is not used.
 
 `L10nMessages` instance provides only one function `format()` with different overloads for ease of
 use. `format()` takes care of loading the localized message from the
-[resource bundle](resource-bundle) for the [given locale](#specify-a-locale). When required, it
+[resource bundle](resource-bundle.md) for the [given locale](#specify-a-locale). When required, it
 formats the message using the arguments passed to the function and the
 [base arguments](#base-arguments).
 
@@ -27,7 +27,7 @@ automatically load the resource bundle `baseName` and the type of `MessageFormat
 that were defined in the `@L10nProperties` annotation.
 
 The first argument of `format()` function will now be
-[one of the enum values](annotation-processor#enum-generated-by-the-annotation-processor). This
+[one of the enum values](annotation-processor.md#enum-generated-by-the-annotation-processor). This
 provides the strong typing of the key and ensures that messages are present at build time.
 
 ```java
@@ -153,7 +153,7 @@ class Example {
 
 ```
 
-Check [ICU4J](icu4j) for advance formatting.
+Check [ICU4J](icu4j.md) for advance formatting.
 
 ### Argument names typing
 
@@ -302,9 +302,9 @@ class Example {
 ## ICU4J, JDK or JDK with named arguments
 
 By default, the fluent API
-([as the annotation processor](annotation-processor#icu4j-jdk-or-jdk-with-named-arguments)) will use
+([as the annotation processor](annotation-processor.md#icu4j-jdk-or-jdk-with-named-arguments)) will use
 ICU4J if it is available. If not, it will use the JDK extended with
-[named arguments](fluent-api#named-arguments-with-jdk-messageformat) support.
+[named arguments](fluent-api.md#named-arguments-with-jdk-messageformat) support.
 
 When initialized from the `enum`, `L10nMessages` will use the same `messageFormatAdapterProvider`
 that was used by the annotation processor.

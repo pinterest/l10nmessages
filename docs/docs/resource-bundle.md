@@ -9,12 +9,12 @@ files.
 In plain Java, there is are no safeguard to ensure `properties` files are present, nor that the
 messages are present and valid which can lead to hard failure at runtime.
 
-The [Annotation Processor](annotation-processor) can be used to validate the existence of the
+The [Annotation Processor](annotation-processor.md) can be used to validate the existence of the
 `properties` files at build time and to check the messages' validity. It will also generate an
 `enum` that can be then used to initialize the fluent API and to provide strong typing of message
 keys insuring the existence of messages at runtime.
 
-The [Fluent API](fluent-api) can simply be initialized from the `enum` and will seamlessly load
+The [Fluent API](fluent-api.md) can simply be initialized from the `enum` and will seamlessly load
 messages from the resource bundle. It can also be used without the annotation processor, in which
 case the resource bundle `baseName` needs to be provided manually and message key will be untyped
 strings.

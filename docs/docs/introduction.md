@@ -5,9 +5,9 @@ title: Introduction
 `L10nMessages` is a library that makes internationalization (i18n) and localization (l10n) of Java
 applications easy and safe.
 
-It provides a [fluent API](fluent-api) to load and format messages that is built on top of Java
+It provides a [fluent API](fluent-api.md) to load and format messages that is built on top of Java
 standard libraries. In addition to simplifying the overall setup, it brings strong typing and
-compile time checks to the mix when used with the [annotation processor](annotation-processor).
+compile time checks to the mix when used with the [annotation processor](annotation-processor.md).
 
 The library can be used standalone in which case it will rely on JDK message formatting capabilities
 to which it adds named argument support.
@@ -17,7 +17,7 @@ standard library for internationalization in Java. The supported APIs, while sim
 more extensive and includes regular updates from Unicode. This is the recommended choice for better
 message formatting and advanced internationalization in general.
 
-Check the [Getting Started](getting-started) guide for a quick overview!
+Check the [Getting Started](getting-started.md) guide for a quick overview!
 
 ## Benefits over plain JDK / ICU4J:
 
@@ -56,7 +56,7 @@ way in the future. The annotation processor is packaged in a different `jar` to 
 size minimal.
 
 `L10nMessages` provides
-[named arguments support with JDK MessageFormat](fluent-api#named-arguments-with-jdk-messageformat)
+[named arguments support with JDK MessageFormat](fluent-api.md#named-arguments-with-jdk-messageformat)
 . If you can't or don't wish to integrate with ICU4J because of its size or dependencies but still
 want named argumentss, this is an interesting trade off.
 
@@ -77,11 +77,11 @@ typing in `L10nMessages` is probably something you have been looking for.
 ### Quick to setup, easy to use and to follow best practicies
 
 With `L10nMessages`, you should be able to be [up and running in a few minutes](getting-started),
-for the main [Java build systems](installation). Some internationalization
-[best practices with ICU4J](icu4j) are also documented.
+for the main [Java build systems](installation/installation.md). Some internationalization
+[best practices with ICU4J](icu4j.md) are also documented.
 
 ### Safer that "plain" Java
 
 Plain Java internationalization lacks in type safety and message format validation. Default error
 handling will hard fail which might not be the best behavior for production systems. `L10nMessages`
-privileges graceful fallbacks and [provides hooks to monitor failures](fluent-api#failure-handling).
+privileges graceful fallbacks and [provides hooks to monitor failures](fluent-api.md#failure-handling).
