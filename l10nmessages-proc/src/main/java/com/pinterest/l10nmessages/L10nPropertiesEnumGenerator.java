@@ -17,7 +17,7 @@ class L10nPropertiesEnumGenerator {
           + "import java.util.Map;\n";
 
   static final String IMPORT_GENERATED_ANNOTATION =
-      (isBeforeJava9()
+      (shouldUseOldGeneratedAnnotation()
               ? "import javax.annotation.Generated;"
               : "import javax.annotation.processing.Generated;")
           + "\n";
@@ -170,12 +170,23 @@ class L10nPropertiesEnumGenerator {
         classNameOfEntryFormatContext, argumentNameAsJavaIdentifier, argumentName);
   }
 
-  static boolean isBeforeJava9() {
-    try {
-      Class.forName("java.lang.Module");
-      return false;
-    } catch (ClassNotFoundException e) {
-      return true;
+  static boolean shouldUseOldGeneratedAnnotation() {
+    boolean useOldGeneratedAnnotation;
+
+    String systemProperty =
+        System.getProperty("io.l10nmessages.useOldGeneratedAnnotation");
+
+    if (systemProperty != null) {
+      useOldGeneratedAnnotation = Boolean.parseBoolean(systemProperty);
+    } else {
+      try {
+        Class.forName("java.lang.Module");
+        useOldGeneratedAnnotation = false;
+      } catch (ClassNotFoundException e) {
+        useOldGeneratedAnnotation = true;
+      }
     }
+
+    return useOldGeneratedAnnotation;
   }
 }

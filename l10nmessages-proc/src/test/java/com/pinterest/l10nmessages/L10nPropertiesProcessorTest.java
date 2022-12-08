@@ -2,7 +2,7 @@ package com.pinterest.l10nmessages;
 
 import static com.google.testing.compile.CompilationSubject.assertThat;
 import static com.google.testing.compile.Compiler.javac;
-import static com.pinterest.l10nmessages.L10nPropertiesEnumGenerator.isBeforeJava9;
+import static com.pinterest.l10nmessages.L10nPropertiesEnumGenerator.shouldUseOldGeneratedAnnotation;
 import static com.pinterest.l10nmessages.PropertiesLoaderTest.getPropertiesEntries;
 import static org.junit.Assume.assumeFalse;
 import static org.junit.Assume.assumeTrue;
@@ -37,21 +37,21 @@ class L10nPropertiesProcessorTest {
 
   @Test
   public void valid() {
-    assumeTrue(isBeforeJava9());
+    assumeTrue(shouldUseOldGeneratedAnnotation());
     Compilation compilation = defaultCompile();
     checkGenerationSuccessful(compilation);
   }
 
   @Test
   public void validJava9() {
-    assumeFalse(isBeforeJava9());
+    assumeFalse(shouldUseOldGeneratedAnnotation());
     Compilation compilation = defaultCompile();
     checkGenerationSuccessful(compilation);
   }
 
   @Test
   public void repeatable() {
-    assumeTrue(isBeforeJava9());
+    assumeTrue(shouldUseOldGeneratedAnnotation());
     Compilation compilation = defaultCompile();
     checkGenerationSuccessful(compilation);
 
@@ -68,7 +68,7 @@ class L10nPropertiesProcessorTest {
 
   @Test
   public void repeatableJava9() {
-    assumeFalse(isBeforeJava9());
+    assumeFalse(shouldUseOldGeneratedAnnotation());
     Compilation compilation = defaultCompile();
     checkGenerationSuccessful(compilation);
 
