@@ -1,7 +1,7 @@
 java_import(
     name = "l10nmessages",
     jars = [
-       "l10nmessages/target/l10nmessages-1.0.2-SNAPSHOT.jar",
+       "l10nmessages/target/l10nmessages-1.0.2.jar",
     ],
     visibility = ["//visibility:public"],
 )
@@ -9,7 +9,7 @@ java_import(
 java_import(
     name = "l10nmessages-proc",
     jars = [
-       "l10nmessages-proc/target/l10nmessages-proc-1.0.2-SNAPSHOT.jar",
+       "l10nmessages-proc/target/l10nmessages-proc-1.0.2.jar",
     ],
     visibility = ["//visibility:public"],
 )

@@ -32,7 +32,7 @@ and [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 Update this document with new version while doing the release.
 
 ```shell
-export NEW_VERSION=1.0.1
+export NEW_VERSION=1.0.2
 mvn versions:set -DnewVersion=${NEW_VERSION} -DgenerateBackupPoms=false
 mvn versions:set-scm-tag -DnewTag=${NEW_VERSION} -DgenerateBackupPoms=false
 ./update-non-maven-versions.sh ${NEW_VERSION}
