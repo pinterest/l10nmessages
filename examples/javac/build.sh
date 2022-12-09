@@ -6,7 +6,7 @@ cp -r src/main/resources/ output
 
 # To build we need the jar (both for the annotation processor and for the regular compilation) and
 # the properties files (for the annotation processor) in the classpath
-CP="output:../../l10nmessages/target/l10nmessages-1.0.2.jar:../../l10nmessages-proc/target/l10nmessages-proc-1.0.2.jar"
+CP="output:../../l10nmessages/target/l10nmessages-1.0.3-SNAPSHOT.jar:../../l10nmessages-proc/target/l10nmessages-proc-1.0.3-SNAPSHOT.jar"
 javac -d output -cp $CP src/main/java/com/pinterest/l10nmessages/example/Application.java
 
 # It is the same for runtime
