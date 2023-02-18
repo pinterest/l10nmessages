@@ -15,6 +15,7 @@ const config = {
   favicon: "img/icon.png",
   organizationName: "pinterest",
   projectName: "l10nmessages",
+  trailingSlash: true,
 
   presets: [
     [

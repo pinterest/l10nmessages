@@ -76,7 +76,7 @@ typing in `L10nMessages` is probably something you have been looking for.
 
 ### Quick to setup, easy to use and to follow best practicies
 
-With `L10nMessages`, you should be able to be [up and running in a few minutes](getting-started),
+With `L10nMessages`, you should be able to be [up and running in a few minutes](getting-started.md),
 for the main [Java build systems](installation/installation.md). Some internationalization
 [best practices with ICU4J](icu4j.md) are also documented.
 
