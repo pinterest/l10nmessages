@@ -72,7 +72,7 @@ const config = {
       },
       metadata: [{
         name: 'keywords',
-        content: 'localization, internationalization, java, l10n, i18n, icu4j'
+        content: 'localization, internationalization, java, l10n, i18n, icu4j, open source, message format, maven, bazel, gradle'
       }]
     }),
 };
