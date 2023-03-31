@@ -94,3 +94,8 @@ or if using the annotation processor
 ```
 fswatch -e ".*" -i "\\.properties$" . | xargs -n1 -I{} mvn clean package
 ```
+
+## Updating examples
+
+Make edits in `maven` and `maven-icu` modules, and then use `examples/copy-src.sh` to copy
+changes to the other modules.
