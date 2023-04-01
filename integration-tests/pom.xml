@@ -18,5 +18,6 @@
   <modules>
     <module>test-jar-properties</module>
     <module>test-jar-tests</module>
+    <module>test-performance</module>
   </modules>
 </project>
