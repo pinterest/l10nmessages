@@ -128,7 +128,7 @@ class L10nPropertiesEnumGenerator {
       formatContextForEntryCode =
           String.format(
               "\n"
-                  + "  static class %1$s implements FormatContext<%2$s> {\n"
+                  + "  public static class %1$s implements FormatContext<%2$s> {\n"
                   + "    Map<String, Object> map = new LinkedHashMap<>();\n"
                   + "\n"
                   + "    @Override\n"
@@ -144,7 +144,7 @@ class L10nPropertiesEnumGenerator {
                   + "%4$s"
                   + "  }\n"
                   + "\n"
-                  + "  static %1$s %3$s() {\n"
+                  + "  public static %1$s %3$s() {\n"
                   + "    return new %1$s();\n"
                   + "  }",
               classNameOfFormatContextForEntry,
@@ -163,7 +163,7 @@ class L10nPropertiesEnumGenerator {
     String argumentNameAsJavaIdentifier = toJavaIdentifier.convert(argumentName);
     return String.format(
         ""
-            + "    %1$s %2$s(Object value) {\n"
+            + "    public %1$s %2$s(Object value) {\n"
             + "      map.put(\"%3$s\", value);\n"
             + "      return this;\n"
             + "    }\n",
