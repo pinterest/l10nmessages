@@ -1,6 +1,5 @@
 package com.pinterest.l10nmessages.tests;
 
-
 import com.pinterest.l10nmessages.L10nMessages;
 import com.pinterest.l10nmessages.L10nProperties;
 import com.pinterest.l10nmessages.tests.m2.Strings2;

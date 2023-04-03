@@ -36,16 +36,17 @@ public class JarScanningTest {
 
     Filer mockFiler = mock(Filer.class);
     when(mockFiler.getResource(
-        StandardLocation.ANNOTATION_PROCESSOR_PATH,
-        "com.pinterest.l10nmessages.tests.m1",
-        "Strings.properties"))
+            StandardLocation.ANNOTATION_PROCESSOR_PATH,
+            "com.pinterest.l10nmessages.tests.m1",
+            "Strings.properties"))
         .thenReturn(javaFileObject);
 
     ProcessorFiler ProcessorFiler = new ProcessorFiler(mockFiler, null);
 
     URI actual =
         ProcessorFiler.getInputResourcePackage(
-            NameParts.fromPropertiesPath("/com/pinterest/l10nmessages/tests/m1/Strings.properties"));
+            NameParts.fromPropertiesPath(
+                "/com/pinterest/l10nmessages/tests/m1/Strings.properties"));
 
     assertThat(javaFileObject.toUri().toString().replaceAll("Strings.properties$", ""))
         .isEqualTo(actual.toString());
@@ -86,9 +87,10 @@ public class JarScanningTest {
           new URL(
               "jar:file:"
                   + Paths.get(
-                  "../test-jar-properties/target/test-jar-properties-" + System.getProperties()
-                      .getProperty("project.version") + ".jar")
-                  .toAbsolutePath()
+                          "../test-jar-properties/target/test-jar-properties-"
+                              + System.getProperties().getProperty("project.version")
+                              + ".jar")
+                      .toAbsolutePath()
                   + "!/com/pinterest/l10nmessages/tests/m1");
     }
     return url;

@@ -15,5 +15,4 @@ class ApplicationTest {
   void french() {
     assertThat(Application.french()).isEqualTo("Bonjour");
   }
-
 }
