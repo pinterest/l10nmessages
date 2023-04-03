@@ -173,8 +173,7 @@ class L10nPropertiesEnumGenerator {
   static boolean shouldUseOldGeneratedAnnotation() {
     boolean useOldGeneratedAnnotation;
 
-    String systemProperty =
-        System.getProperty("io.l10nmessages.useOldGeneratedAnnotation");
+    String systemProperty = System.getProperty("io.l10nmessages.useOldGeneratedAnnotation");
 
     if (systemProperty != null) {
       useOldGeneratedAnnotation = Boolean.parseBoolean(systemProperty);
