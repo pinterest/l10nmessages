@@ -34,7 +34,7 @@
 
   <properties>
     <guava.version>31.1-jre</guava.version>
-    <icu4j.version>71.1</icu4j.version>
+    <icu4j.version>72.1</icu4j.version>
     <java.version>1.8</java.version>
     <junit-jupiter-engine.version>5.6.3</junit-jupiter-engine.version>
     <assertj-core-version>3.22.0</assertj-core-version>

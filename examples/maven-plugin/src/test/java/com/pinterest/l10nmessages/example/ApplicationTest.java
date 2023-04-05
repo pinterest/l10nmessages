@@ -167,8 +167,8 @@ class ApplicationTest {
   void icu4jDate() {
     assertEquals(
         Arrays.asList(
-            "Today is: Jun 22, 2022, it is: 8:12:34 PM",
-            "Today is: 6/22/22, it is: 8:12 PM",
+            "Today is: Jun 22, 2022, it is: 8:12:34 PM",
+            "Today is: 6/22/22, it is: 8:12 PM",
             "Aujourd'hui c'est le: 22 juin 2022, il est: 20:12:34",
             "Aujourd'hui c'est le: 22/06/2022, il est: 20:12"),
         Application.icu4jDate());
@@ -177,7 +177,7 @@ class ApplicationTest {
   @Test
   void icu4jSkeleton() {
     assertEquals(
-        Arrays.asList("CA$1,000.12 - June 22 at 8:12 PM", "1 000,12 $CA - 22 juin à 20:12"),
+        Arrays.asList("CA$1,000.12 - June 22 at 8:12 PM", "1 000,12 $CA - 22 juin à 20:12"),
         Application.icu4jSkeleton());
   }
 
