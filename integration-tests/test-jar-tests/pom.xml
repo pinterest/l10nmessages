@@ -10,7 +10,6 @@
     <version>1.0.3-SNAPSHOT</version>
   </parent>
 
-  <groupId>com.pinterest.l10nmessages.tests</groupId>
   <artifactId>test-jar-tests</artifactId>
   <version>1.0.3-SNAPSHOT</version>
 
