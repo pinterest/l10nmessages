@@ -8,11 +8,11 @@
   <parent>
     <groupId>com.pinterest.l10nmessages</groupId>
     <artifactId>l10nmessages-parent</artifactId>
-    <version>1.0.3</version>
+    <version>1.0.4-SNAPSHOT</version>
   </parent>
 
   <artifactId>l10nmessages</artifactId>
-  <version>1.0.3</version>
+  <version>1.0.4-SNAPSHOT</version>
   <name>l10nmessages</name>
   <url>https://l10nmessages.io</url>
   <description>The fluent API for L10nMessages, a library that makes internationalization (i18n)

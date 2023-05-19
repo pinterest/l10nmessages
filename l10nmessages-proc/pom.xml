@@ -7,11 +7,11 @@
   <parent>
     <groupId>com.pinterest.l10nmessages</groupId>
     <artifactId>l10nmessages-parent</artifactId>
-    <version>1.0.3</version>
+    <version>1.0.4-SNAPSHOT</version>
   </parent>
 
   <artifactId>l10nmessages-proc</artifactId>
-  <version>1.0.3</version>
+  <version>1.0.4-SNAPSHOT</version>
   <name>l10nmessages-proc</name>
   <url>https://l10nmessages.io</url>
   <description>The annotation processor for L10nMessages, a library that makes internationalization
@@ -25,7 +25,7 @@
     <dependency>
       <groupId>com.pinterest.l10nmessages</groupId>
       <artifactId>l10nmessages</artifactId>
-      <version>1.0.3</version>
+      <version>1.0.4-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>com.google.auto.service</groupId>
