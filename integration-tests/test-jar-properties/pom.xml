@@ -7,10 +7,10 @@
   <parent>
     <groupId>com.pinterest.l10nmessages.tests</groupId>
     <artifactId>integration-tests</artifactId>
-    <version>1.0.3-SNAPSHOT</version>
+    <version>1.0.3</version>
   </parent>
 
   <artifactId>test-jar-properties</artifactId>
-  <version>1.0.3-SNAPSHOT</version>
+  <version>1.0.3</version>
 
 </project>
