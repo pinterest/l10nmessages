@@ -19,5 +19,4 @@ public enum TestMessages {
   public String toString() {
     return key;
   }
-
 }

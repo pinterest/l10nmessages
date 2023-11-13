@@ -4,19 +4,23 @@ import static com.google.testing.compile.CompilationSubject.assertThat;
 import static com.google.testing.compile.Compiler.javac;
 import static com.pinterest.l10nmessages.L10nPropertiesEnumGenerator.shouldUseOldGeneratedAnnotation;
 import static com.pinterest.l10nmessages.PropertiesLoaderTest.getPropertiesEntries;
-import static org.junit.Assume.assumeFalse;
-import static org.junit.Assume.assumeTrue;
 import static org.junit.jupiter.api.Assertions.assertIterableEquals;
+import static org.junit.jupiter.api.Assumptions.assumeFalse;
+import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
+import com.google.common.io.Resources;
 import com.google.testing.compile.Compilation;
 import com.google.testing.compile.CompilationSubject.DiagnosticInFile;
 import com.google.testing.compile.JavaFileObjectSubject;
 import com.google.testing.compile.JavaFileObjects;
 import com.pinterest.l10nmessages.PropertiesLoader.PropertiesEntry;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Stream;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInfo;
@@ -73,14 +77,10 @@ class L10nPropertiesProcessorTest {
     checkGenerationSuccessful(compilation);
 
     // test the second file
-    JavaFileObjectSubject javaFileObjectSubject =
-        assertThat(compilation).generatedSourceFile(Generator.getEnumOutputName(testName) + "2");
-
-    javaFileObjectSubject.hasSourceEquivalentTo(
-        JavaFileObjects.forResource(
-            String.format(
-                "com/pinterest/l10nmessages/L10nPropertiesProcessorTest_IO/%1$s/TestMessages2.java",
-                testName)));
+    compareGenerateWithTestResource(
+        compilation,
+        Generator.getEnumOutputName(testName) + "2",
+        "com/pinterest/l10nmessages/L10nPropertiesProcessorTest_IO/%1$s/TestMessages2.java");
   }
 
   @Test
@@ -288,12 +288,27 @@ class L10nPropertiesProcessorTest {
 
   void checkGenerationSuccessful(Compilation compilation) {
     assertThat(compilation).succeeded();
-    JavaFileObjectSubject javaFileObjectSubject =
-        assertThat(compilation).generatedSourceFile(Generator.getEnumOutputName(testName));
-    javaFileObjectSubject.hasSourceEquivalentTo(
-        JavaFileObjects.forResource(
-            String.format(
-                "com/pinterest/l10nmessages/L10nPropertiesProcessorTest_IO/%1$s/TestMessages.java",
-                testName)));
+    compareGenerateWithTestResource(
+        compilation,
+        Generator.getEnumOutputName(testName),
+        "com/pinterest/l10nmessages/L10nPropertiesProcessorTest_IO/%1$s/TestMessages.java");
+  }
+
+  void compareGenerateWithTestResource(
+      Compilation compilation, String generatedPath, String resourcePathPattern) {
+
+    try {
+      String resourcePath = String.format(resourcePathPattern, testName);
+
+      String generated =
+          compilation.generatedSourceFile(generatedPath).get().getCharContent(false).toString();
+
+      String expected =
+          Resources.toString(Resources.getResource(resourcePath), StandardCharsets.UTF_8);
+
+      Assertions.assertThat(generated.trim()).isEqualTo(expected.trim());
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    }
   }
 }
