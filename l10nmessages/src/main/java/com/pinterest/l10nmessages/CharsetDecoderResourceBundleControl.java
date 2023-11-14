@@ -1,5 +1,8 @@
 package com.pinterest.l10nmessages;
 
+import static com.pinterest.l10nmessages.AlternateLanguageCodes.getAlternateResourceName;
+import static com.pinterest.l10nmessages.AlternateLanguageCodes.hasAlternateLanguageCode;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -31,11 +34,11 @@ class CharsetDecoderResourceBundleControl extends ResourceBundle.Control {
 
       String bundleName = toBundleName(baseName, locale);
       String resourceName = toResourceName(bundleName, "properties");
+      bundle = getResourceBundle(loader, resourceName);
 
-      try (InputStream stream = loader.getResourceAsStream(resourceName)) {
-        if (stream != null) {
-          bundle = new PropertyResourceBundle(new InputStreamReader(stream, charsetDecoder));
-        }
+      if (bundle == null && hasAlternateLanguageCode(locale)) {
+        resourceName = getAlternateResourceName(locale, resourceName);
+        bundle = getResourceBundle(loader, resourceName);
       }
     } else {
       bundle = super.newBundle(baseName, locale, format, loader, reload);
@@ -44,8 +47,9 @@ class CharsetDecoderResourceBundleControl extends ResourceBundle.Control {
     return bundle;
   }
 
-  private ResourceBundle getResourceBundle(
-      ClassLoader loader, ResourceBundle bundle, String resourceName) throws IOException {
+  private ResourceBundle getResourceBundle(ClassLoader loader, String resourceName)
+      throws IOException {
+    ResourceBundle bundle = null;
     try (InputStream stream = loader.getResourceAsStream(resourceName)) {
       if (stream != null) {
         bundle = new PropertyResourceBundle(new InputStreamReader(stream, charsetDecoder));

@@ -27,22 +27,18 @@ public enum ResourceBundleProviders implements ResourceBundleProvider {
     public ResourceBundle get(String baseName, Locale locale) {
       ResourceBundle resourceBundle;
 
-      if (isJava8()) {
+      if (JavaVersions.isJava17AndUp()) {
+        resourceBundle = ResourceBundle.getBundle(baseName, locale);
+      } else {
         resourceBundle =
             ResourceBundle.getBundle(
                 baseName,
                 locale,
                 new CharsetDecoderResourceBundleControl(
                     new UTF8FallbackISO88591Charset().newDecoder()));
-      } else {
-        resourceBundle = ResourceBundle.getBundle(baseName, locale);
       }
 
       return resourceBundle;
     }
   };
-
-  static boolean isJava8() {
-    return "1.8".equals(System.getProperty("java.specification.version"));
-  }
 }

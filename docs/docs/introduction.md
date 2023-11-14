@@ -40,6 +40,9 @@ Check the [Getting Started](getting-started.md) guide for a quick overview!
   - Duplicated keys in `properties` files
 - For Java 8, try to load properties files as `UTF-8` and fallback to `ISO-8859-1`. This is the
   default behavior in Java 9+
+- For Java < 17, try to load alternate properties files for obsolete languages: "iw", "in" and 
+  "ji" (replaced respectively by "he", "id" and "yi"). This is the default behavior starting with
+  Java 17
 - Simple caching. Easily integrates with other library like Guava cache.
 - Share arguments between subsequent calls to `L10nMessages#format()` calls
 - Graceful failure for invalid message formats and missing messages
