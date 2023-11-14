@@ -51,7 +51,6 @@ by keys. Use a comment before the key to provide translator instruction.
 ```properties
 # Translator instruction for message1
 key1=message1
-
 # Translator instruction for message2
 key2=message2
 ```
@@ -61,6 +60,27 @@ key2=message2
 With Java 8, the library uses a similar logic as what became standard with Java 9. It tries to load
 the `properties` as `UTF-8` and fallbacks to `ISO-8859-1` in case of errors. With Java 9+, the JDK
 code is directly used.
+
+## Legacy language codes
+
+Hebrew, Indonesian and Yiddish have obsolet forms: `iw`, `in` and `ji` which respectively
+map to the new language codes: `he`, `id` and `yi`.
+
+`L10nMessages` will load data from either forms and that regardless of the tag used when the locale
+is created.
+
+More concretely, `properties` files can be named
+`Message_iw.properties` or `Messages_he.properties`, and the locale created with either
+`new Locale("iw")` or `new Locale("he")`, `L10nMessages` will adapt accordingly.
+
+This is similar to the behavior introduced by Java 17, but addresses issues with previous versions
+of Java that will only load the data for the old forms.
+
+For more context, before Java 17, Locale's constructor always converted those three language codes
+to their earlier, obsoleted forms. The `properties` files had to be named using the obsolete forms,
+and that regardless of the form used when creating the locale. In Java 17, the new forms are used by
+default. The `properties` files can use either form. If the default form is missing it will attempt
+to load the alternate form.
 
 ## Other ResourceBundle types
 

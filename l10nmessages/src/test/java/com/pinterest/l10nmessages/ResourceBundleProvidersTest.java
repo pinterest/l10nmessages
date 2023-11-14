@@ -1,5 +1,6 @@
 package com.pinterest.l10nmessages;
 
+import static com.pinterest.l10nmessages.JavaVersions.isJava8;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
@@ -44,7 +45,7 @@ class ResourceBundleProvidersTest {
   void utf8NoBomFileFailsForNative8() {
     ResourceBundle resourceBundle =
         ResourceBundle.getBundle("com.pinterest.l10nmessages.Messages", Locale.ROOT);
-    if (ResourceBundleProviders.isJava8()) {
+    if (isJava8()) {
       // 8 will read as iso and not fail to read but return the wrong result
       assertThat(resourceBundle.getString("iso"))
           .isEqualTo("break because of accented character: Ã ");
@@ -59,7 +60,7 @@ class ResourceBundleProvidersTest {
   void utf8BomFileFailsForNative8() {
     ResourceBundle resourceBundle =
         ResourceBundle.getBundle("com.pinterest.l10nmessages.MessagesBOM", Locale.ROOT);
-    if (ResourceBundleProviders.isJava8()) {
+    if (isJava8()) {
       // 8 will read as iso and not fail to read but return the wrong result
       assertThat(resourceBundle.getString("iso"))
           .isEqualTo("break because of accented character: Ã ");
@@ -75,6 +76,62 @@ class ResourceBundleProvidersTest {
     ResourceBundle resourceBundle =
         ResourceBundle.getBundle("com.pinterest.l10nmessages.MessagesISO", Locale.ROOT);
     assertThat(resourceBundle.getString("iso")).isEqualTo("break because of accented character: à");
+  }
+
+  @Test
+  public void alternateLocaleBothIWAndHE() {
+    // This bundle has both "iw" and "he" files
+    // this shows how based on the version, "iw" or "he" file will be loaded, this regardless
+    // of the locale code. Java 17 and up will load "he" while before it would load "iw"
+    // This could be made stable ... but the complexity is not worth as we assume only one
+    // file will be used in practice, or that they'll have the same content.
+    if (JavaVersions.isJava17AndUp()) {
+      ResourceBundle resourceBundle =
+          ResourceBundleProviders.DEFAULT_OR_BACKPORT.get(
+              "com.pinterest.l10nmessages.Messages", new Locale("iw"));
+      assertThat(resourceBundle.getString("welcome")).isEqualTo("Welcome! - he");
+
+      ResourceBundle resourceBundleHe =
+          ResourceBundleProviders.DEFAULT_OR_BACKPORT.get(
+              "com.pinterest.l10nmessages.Messages", new Locale("he"));
+      assertThat(resourceBundleHe.getString("welcome")).isEqualTo("Welcome! - he");
+    } else {
+      ResourceBundle resourceBundle =
+          ResourceBundleProviders.DEFAULT_OR_BACKPORT.get(
+              "com.pinterest.l10nmessages.Messages", new Locale("iw"));
+      assertThat(resourceBundle.getString("welcome")).isEqualTo("Welcome! - iw");
+
+      ResourceBundle resourceBundleHe =
+          ResourceBundleProviders.DEFAULT_OR_BACKPORT.get(
+              "com.pinterest.l10nmessages.Messages", new Locale("he"));
+      assertThat(resourceBundleHe.getString("welcome")).isEqualTo("Welcome! - iw");
+    }
+  }
+
+  @Test
+  public void alternateLocaleOnlyIW() {
+    ResourceBundle resourceBundle =
+        ResourceBundleProviders.DEFAULT_OR_BACKPORT.get(
+            "com.pinterest.l10nmessages.MessagesIW", new Locale("iw"));
+    assertThat(resourceBundle.getString("welcome")).isEqualTo("Welcome! - iw");
+
+    ResourceBundle resourceBundleHe =
+        ResourceBundleProviders.DEFAULT_OR_BACKPORT.get(
+            "com.pinterest.l10nmessages.MessagesIW", new Locale("he"));
+    assertThat(resourceBundleHe.getString("welcome")).isEqualTo("Welcome! - iw");
+  }
+
+  @Test
+  public void alternateLocaleOnlyHE() {
+    ResourceBundle resourceBundle =
+        ResourceBundleProviders.DEFAULT_OR_BACKPORT.get(
+            "com.pinterest.l10nmessages.MessagesHE", new Locale("iw"));
+    assertThat(resourceBundle.getString("welcome")).isEqualTo("Welcome! - he");
+
+    ResourceBundle resourceBundleHe =
+        ResourceBundleProviders.DEFAULT_OR_BACKPORT.get(
+            "com.pinterest.l10nmessages.MessagesHE", new Locale("he"));
+    assertThat(resourceBundleHe.getString("welcome")).isEqualTo("Welcome! - he");
   }
 
   @Test
