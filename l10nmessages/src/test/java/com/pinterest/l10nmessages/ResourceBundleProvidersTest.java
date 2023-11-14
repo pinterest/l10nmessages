@@ -1,8 +1,10 @@
 package com.pinterest.l10nmessages;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import java.util.Locale;
+import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -73,5 +75,15 @@ class ResourceBundleProvidersTest {
     ResourceBundle resourceBundle =
         ResourceBundle.getBundle("com.pinterest.l10nmessages.MessagesISO", Locale.ROOT);
     assertThat(resourceBundle.getString("iso")).isEqualTo("break because of accented character: à");
+  }
+
+  @Test
+  public void missingBundle() {
+    assertThatThrownBy(
+            () ->
+                ResourceBundleProviders.DEFAULT_OR_BACKPORT.get(
+                    "a.missing.bundle.Messages", Locale.FRENCH))
+        .isInstanceOf(MissingResourceException.class)
+        .hasMessageContaining("Can't find bundle for base name a.missing.bundle.Messages");
   }
 }

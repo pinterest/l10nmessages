@@ -23,16 +23,29 @@ class CharsetDecoderResourceBundleControl extends ResourceBundle.Control {
   @Override
   public ResourceBundle newBundle(
       String baseName, Locale locale, String format, ClassLoader loader, boolean reload)
-      throws IOException {
-
-    if (!"java.properties".equals(format)) {
-      throw new RuntimeException("Only support java.properties format");
-    }
+      throws IllegalAccessException, InstantiationException, IOException {
 
     ResourceBundle bundle = null;
-    String bundleName = toBundleName(baseName, locale);
-    String resourceName = toResourceName(bundleName, "properties");
 
+    if ("java.properties".equals(format)) {
+
+      String bundleName = toBundleName(baseName, locale);
+      String resourceName = toResourceName(bundleName, "properties");
+
+      try (InputStream stream = loader.getResourceAsStream(resourceName)) {
+        if (stream != null) {
+          bundle = new PropertyResourceBundle(new InputStreamReader(stream, charsetDecoder));
+        }
+      }
+    } else {
+      bundle = super.newBundle(baseName, locale, format, loader, reload);
+    }
+
+    return bundle;
+  }
+
+  private ResourceBundle getResourceBundle(
+      ClassLoader loader, ResourceBundle bundle, String resourceName) throws IOException {
     try (InputStream stream = loader.getResourceAsStream(resourceName)) {
       if (stream != null) {
         bundle = new PropertyResourceBundle(new InputStreamReader(stream, charsetDecoder));
