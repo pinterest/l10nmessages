@@ -7,18 +7,18 @@
   <parent>
     <groupId>com.pinterest.l10nmessages.example</groupId>
     <artifactId>examples</artifactId>
-    <version>1.0.4-SNAPSHOT</version>
+    <version>1.0.4</version>
   </parent>
 
   <groupId>com.pinterest.l10nmessages.example</groupId>
   <artifactId>maven-icu</artifactId>
-  <version>1.0.4-SNAPSHOT</version>
+  <version>1.0.4</version>
 
   <dependencies>
     <dependency>
       <groupId>com.pinterest.l10nmessages</groupId>
       <artifactId>l10nmessages-proc</artifactId>
-      <version>1.0.4-SNAPSHOT</version>
+      <version>1.0.4</version>
     </dependency>
     <dependency>
       <groupId>com.ibm.icu</groupId>
