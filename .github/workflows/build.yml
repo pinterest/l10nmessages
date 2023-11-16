@@ -32,18 +32,18 @@ jobs:
         run: mvn install -DskipTests
       - name: Maven test
         run: mvn test
-      - name: Run Gradle exammple
+      - name: Run Gradle example
         run: ./gradlew build run --no-daemon
         working-directory: examples/gradle
-      - name: Run Gradle ICU exammple
+      - name: Run Gradle ICU example
         run: ./gradlew build run --no-daemon
         working-directory: examples/gradle-icu
       - if: ${{ matrix.bazel }}
-        name: Run Bazel exammple
+        name: Run Bazel example
         run: bazel build //:l10nbazel; bazel-bin/l10nbazel
         working-directory: examples/bazel-local
       - if: ${{ matrix.bazel }}
-        name: Run Bazel ICU exammple
+        name: Run Bazel ICU example
         run: bazel build //:l10nbazel; bazel-bin/l10nbazel
         working-directory: examples/bazel-icu-local
 
