@@ -2,8 +2,9 @@
 
 [![Build](https://github.com/pinterest/l10nmessages/actions/workflows/build.yml/badge.svg)](https://github.com/pinterest/l10nmessages/actions/workflows/build.yml)
 [![License](http://img.shields.io/:license-Apache%202-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.txt)
-[![Maven Central](https://img.shields.io/maven-central/v/com.pinterest.l10nmessages/l10nmessages)](https://l10nmessages.io/docs/installation)
+[![Maven Central](https://img.shields.io/maven-central/v/com.pinterest.l10nmessages/l10nmessages.svg?label=maven%20central)](https://search.maven.org/search?q=g:%22com.pinterest.l10nmessages%22%20AND%20a:%22l10nmessages%22)
 [![javadoc](https://javadoc.io/badge2/com.pinterest.l10nmessages/l10nmessages/javadoc.svg)](https://javadoc.io/doc/com.pinterest.l10nmessages/l10nmessages)
+[![Installation](https://img.shields.io/badge/installation-1.0.4-aaffee)](https://l10nmessages.io/docs/installation)
 
 `L10nMessages` is a library that makes internationalization (i18n) and localization (l10n) of Java
 applications easy and safe.
