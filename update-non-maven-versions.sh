@@ -35,7 +35,7 @@ then
   # Bazel examples
   echo "Updating to release"
   sed -E -i '' -e  "s/l10nmessages:${CURRENT_VERSION}/l10nmessages:${NEW_VERSION}/g" examples/{bazel,bazel-icu}/WORKSPACE;
-  sed -E -i '' -e  "s/l10nmessages_proc:${CURRENT_VERSION}/l10nmessages_proc:${NEW_VERSION}/g" examples/{bazel,bazel-icu}/WORKSPACE;
+  sed -E -i '' -e  "s/l10nmessages-proc:${CURRENT_VERSION}/l10nmessages-proc:${NEW_VERSION}/g" examples/{bazel,bazel-icu}/WORKSPACE;
 
   # Docs
   sed -E -i '' -e  "s/l10nmessages:${CURRENT_VERSION}/l10nmessages:${NEW_VERSION}/g" docs/docs/installation/{bazel,gradle}.md;
