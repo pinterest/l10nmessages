@@ -133,4 +133,41 @@ public class L10nPropertiesEnumGeneratorTest {
                 + "}\n",
             enumString);
   }
+
+  @Test
+  void toEnumWithNoKeys() {
+    String baseName = "com.pinterest.l10nmessages.Messages";
+    NameParts nameParts = NameParts.fromBaseName(baseName);
+
+    LinkedHashMap<String, String> entries =
+        (LinkedHashMap<String, String>)
+            Maps.of(
+                "hello_username", "Hello {userName}, {count}",
+                "bye", "Bye");
+
+    String enumString =
+        L10nPropertiesEnumGenerator.toEnum(
+            entries,
+            nameParts,
+            ToJavaIdentifiers.ESCAPING_AND_UNDERSCORE,
+            MessageFormatAdapterProviders.JDK_NAMED_ARGS,
+            L10nPropertiesProcessor.class.getName(),
+            EnumType.NO_KEYS);
+
+    assertThat(enumString)
+        .isEqualTo(
+            "package com.pinterest.l10nmessages;\n"
+                + "\n"
+                + L10nPropertiesEnumGenerator.IMPORT_GENERATED_ANNOTATION
+                + "\n"
+                + "@Generated(\"com.pinterest.l10nmessages.L10nPropertiesProcessor\")\n"
+                + "public enum Messages {\n"
+                + "  ;\n"
+                + "\n"
+                + "  public static final String BASENAME = \"com.pinterest.l10nmessages.Messages\";\n"
+                + "  public static final String MESSAGE_FORMAT_ADAPTER_PROVIDERS = \"JDK_NAMED_ARGS\";\n"
+                + "\n"
+                + "}\n",
+            enumString);
+  }
 }
