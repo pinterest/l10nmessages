@@ -113,6 +113,13 @@ class L10nMessagesTest {
   }
 
   @Test
+  void getResourceBundle() {
+    L10nMessages<com.pinterest.l10nmessages.Messages> m =
+        L10nMessages.builder(Messages.class).build();
+    assertThat(m.getResourceBundle().keySet().size()).isEqualTo(15);
+  }
+
+  @Test
   public void enumTypedFormat() {
     L10nMessages<com.pinterest.l10nmessages.Messages> m =
         L10nMessages.builder(Messages.class).build();
