@@ -7,7 +7,7 @@ RULES_JVM_EXTERNAL_SHA = "cd1a77b7b02e8e008439ca76fd34f5b07aecb8c752961f9640dea1
 new_local_repository(
     name = "l10nmessages_local",
     path = "../../",
-    build_file = "l10nmessages_local_maven.BUILD.bzl",
+    build_file = "@//:l10nmessages_local_maven.BUILD.bzl",
 )
 
 http_archive(
