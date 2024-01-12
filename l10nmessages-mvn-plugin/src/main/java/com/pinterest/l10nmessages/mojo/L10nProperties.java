@@ -78,8 +78,4 @@ public class L10nProperties {
   public EnumType getEnumType() {
     return enumType;
   }
-
-  public void setGeneratorStyle(EnumType enumType) {
-    this.enumType = enumType;
-  }
 }
