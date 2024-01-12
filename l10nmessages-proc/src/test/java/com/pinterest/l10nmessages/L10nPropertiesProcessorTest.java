@@ -47,6 +47,13 @@ class L10nPropertiesProcessorTest {
   }
 
   @Test
+  public void validArgumentBuilder() {
+    assumeTrue(shouldUseOldGeneratedAnnotation());
+    Compilation compilation = defaultCompile();
+    checkGenerationSuccessful(compilation);
+  }
+
+  @Test
   public void validJava9() {
     assumeFalse(shouldUseOldGeneratedAnnotation());
     Compilation compilation = defaultCompile();
