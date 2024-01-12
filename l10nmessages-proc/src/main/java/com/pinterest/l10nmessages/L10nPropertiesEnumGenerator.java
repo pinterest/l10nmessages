@@ -51,8 +51,9 @@ class L10nPropertiesEnumGenerator {
 
     String enumValues =
         deduplicatedWithReporting.keySet().stream()
-            .map(key -> String.format("  %s(\"%s\")", toJavaIdentifier.convert(key), key))
-            .collect(Collectors.joining(",\n"));
+                .map(key -> String.format("  %s(\"%s\")", toJavaIdentifier.convert(key), key))
+                .collect(Collectors.joining(",\n"))
+            + ";";
 
     String packageString =
         nameParts.getDotPackageName().isEmpty()
@@ -67,32 +68,42 @@ class L10nPropertiesEnumGenerator {
             + "\n"
             + "@Generated(\"%4$s\")\n"
             + "public enum %5$s {\n"
-            + "%6$s;\n"
+            + "%6$s\n"
             + "\n"
             + "  public static final String BASENAME = \"%7$s\";\n"
             + "  public static final String MESSAGE_FORMAT_ADAPTER_PROVIDERS = \"%8$s\";\n"
             + "\n"
-            + "  private String key;\n"
-            + "\n"
-            + "  %5$s(String key) {\n"
-            + "    this.key = key;\n"
-            + "  }\n"
-            + "\n"
-            + "  @Override\n"
-            + "  public String toString() {\n"
-            + "    return key;\n"
-            + "  }\n"
             + "%9$s"
+            + "%10$s"
             + "}\n",
         packageString, // 1
         enumType.WITH_ARGUMENT_BUILDERS.equals(enumType) ? IMPORT_STATEMENT_FOR_ARGUMENTS : "", // 2
         IMPORT_GENERATED_ANNOTATION, // 3
         generatedAnnotationValue, // 4
         nameParts.getEnumName(), // 5
-        enumValues, // 6
+        enumType.NO_KEYS.equals(enumType) ? "  ;" : enumValues, // 6
         nameParts.getBaseName(), // 7
         messageFormatAdapterProviders, // 8
-        enumType.WITH_ARGUMENT_BUILDERS.equals(enumType) ? formatContexts + "\n" : ""); // 9
+        enumType.NO_KEYS.equals(enumType) ? "" : generateConstructorBlock(nameParts.getEnumName()),
+        // 9
+        enumType.WITH_ARGUMENT_BUILDERS.equals(enumType) ? formatContexts + "\n" : "" // 10
+        );
+  }
+
+  private static String generateConstructorBlock(String enumName) {
+    return String.format(
+        ""
+            + "  private String key;\n"
+            + "\n"
+            + "  %1$s(String key) {\n"
+            + "    this.key = key;\n"
+            + "  }\n"
+            + "\n"
+            + "  @Override\n"
+            + "  public String toString() {\n"
+            + "    return key;\n"
+            + "  }\n",
+        enumName);
   }
 
   private static String generateFormatContextForEntry(
