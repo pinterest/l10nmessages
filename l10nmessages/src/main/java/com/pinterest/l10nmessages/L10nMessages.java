@@ -136,6 +136,15 @@ public class L10nMessages<T> {
   }
 
   /**
+   * Get the resource bundle used to load the messages.
+   *
+   * @return the resource bundle used to load the messages
+   */
+  public ResourceBundle getResourceBundle() {
+    return resourceBundle;
+  }
+
+  /**
    * Format a message for an "untyped" key and a given map of arguments.
    *
    * <p>The key is passed as it to the underlying {@link ResourceBundle}.
