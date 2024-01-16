@@ -7,18 +7,18 @@
   <parent>
     <groupId>com.pinterest.l10nmessages.example</groupId>
     <artifactId>examples</artifactId>
-    <version>1.0.5</version>
+    <version>1.0.6-SNAPSHOT</version>
   </parent>
 
   <groupId>com.pinterest.l10nmessages.example</groupId>
   <artifactId>maven-explicit</artifactId>
-  <version>1.0.5</version>
+  <version>1.0.6-SNAPSHOT</version>
 
   <dependencies>
     <dependency>
       <groupId>com.pinterest.l10nmessages</groupId>
       <artifactId>l10nmessages</artifactId>
-      <version>1.0.5</version>
+      <version>1.0.6-SNAPSHOT</version>
     </dependency>
 
     <!-- for tests - not needed by l10nmessages-->
