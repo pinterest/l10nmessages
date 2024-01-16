@@ -18,8 +18,8 @@ The runtime library is added using `implementation` entry the the annotation pro
 
 ```kotlin title=build.gradle.kts
 dependencies {
-    implementation("com.pinterest.l10nmessages:l10nmessages:1.0.4")
-    annotationProcessor("com.pinterest.l10nmessages:l10nmessages-proc:1.0.4")
+    implementation("com.pinterest.l10nmessages:l10nmessages:1.0.5")
+    annotationProcessor("com.pinterest.l10nmessages:l10nmessages-proc:1.0.5")
     annotationProcessor(files("src/main/resources/**/*.properties"))
 }
 ```
@@ -31,10 +31,10 @@ dependencies
 
 ```kotlin title=build.gradle.kts
 dependencies {
-    implementation("com.pinterest.l10nmessages:l10nmessages:1.0.4")
+    implementation("com.pinterest.l10nmessages:l10nmessages:1.0.5")
     implementation("com.ibm.icu:icu4j:72.1")
 
-    annotationProcessor("com.pinterest.l10nmessages:l10nmessages-proc:1.0.4")
+    annotationProcessor("com.pinterest.l10nmessages:l10nmessages-proc:1.0.5")
     annotationProcessor("com.ibm.icu:icu4j:72.1")
     annotationProcessor(files("src/main/resources/**/*.properties"))
 }

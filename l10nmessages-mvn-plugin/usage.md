@@ -2,7 +2,7 @@
 <plugin>
   <groupId>com.pinterest.l10nmessages</groupId>
   <artifactId>l10nmessages-mvn-plugin</artifactId>
-  <version>1.0.4</version>
+  <version>1.0.5</version>
   <dependencies>
     <dependency>
       <groupId>com.ibm.icu</groupId>

@@ -9,7 +9,7 @@ Java 8+ supported
 
 Maven group id is `com.pinterest.l10nmessages` and artifact id `l10nmessages`. 
 
-The latest version is `1.0.4`.
+The latest version is `1.0.5`.
 
 :::
 

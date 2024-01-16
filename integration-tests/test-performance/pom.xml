@@ -7,17 +7,17 @@
   <parent>
     <groupId>com.pinterest.l10nmessages.tests</groupId>
     <artifactId>integration-tests</artifactId>
-    <version>1.0.5-SNAPSHOT</version>
+    <version>1.0.5</version>
   </parent>
 
   <artifactId>test-performance</artifactId>
-  <version>1.0.5-SNAPSHOT</version>
+  <version>1.0.5</version>
 
   <dependencies>
     <dependency>
       <groupId>com.pinterest.l10nmessages</groupId>
       <artifactId>l10nmessages-proc</artifactId>
-      <version>1.0.5-SNAPSHOT</version>
+      <version>1.0.5</version>
     </dependency>
     <dependency>
       <groupId>org.openjdk.jmh</groupId>
